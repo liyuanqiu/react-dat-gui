@@ -2,8 +2,8 @@
   "name": "react-dat-gui",
   "version": "2.2.0",
   "description": "dat.GUI reimagined for React",
-  "main": "build/react-dat-gui.js",
-  "style": "build/react-dat-gui.css",
+  "main": "build/index.js",
+  "style": "build/index.css",
   "types": "index.d.ts",
   "contributors": [
     {
@@ -27,7 +27,10 @@
     "url": "git@github.com:claus/react-dat-gui.git"
   },
   "scripts": {
-    "build": "webpack --env build",
+    "build": "npm run clean-builds && npm run build-script && npm run build-style",
+    "clean-builds": "rm -rf build",
+    "build-script": "babel src -d build",
+    "build-style": "node-sass src/style/dat.scss build/index.css",
     "dev": "npm run start --prefix dev",
     "dev:migrate": "sh scripts/dev-migrate && npm run dev",
     "dev:promote": "sh scripts/dev-promote && npm run build",
@@ -49,8 +52,10 @@
     "lodash.result": "^4.4.0",
     "lodash.set": "^4.2.0",
     "prop-types": "^15.6.0",
+    "react-color": "^2.13.8"
+  },
+  "peerDependencies": {
     "react": "^16.0.0",
-    "react-color": "^2.13.8",
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
@@ -82,6 +87,8 @@
     "postcss-cli": "^2.5.2",
     "postcss-loader": "^0.9.1",
     "precss": "^1.4.0",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.13.1",
     "uglify-js": "2.6.2",
