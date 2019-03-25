@@ -3,7 +3,7 @@
   "version": "2.2.0",
   "description": "dat.GUI reimagined for React",
   "main": "build/index.js",
-  "style": "build/index.css",
+  "style": "build/react-dat-gui.css",
   "types": "index.d.ts",
   "contributors": [
     {
@@ -30,7 +30,7 @@
     "build": "npm run clean-builds && npm run build-script && npm run build-style",
     "clean-builds": "rm -rf build",
     "build-script": "babel src -d build",
-    "build-style": "node-sass src/style/dat.scss build/index.css",
+    "build-style": "node-sass src/style/dat.scss build/react-dat-gui.css",
     "dev": "npm run start --prefix dev",
     "dev:migrate": "sh scripts/dev-migrate && npm run dev",
     "dev:promote": "sh scripts/dev-promote && npm run build",
